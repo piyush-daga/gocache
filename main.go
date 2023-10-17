@@ -31,8 +31,6 @@ func main() {
 	// As a test
 	c.Get("ok")
 
-	c.Set("ok2", "yes babu", time.Second*5)
-
 	// fmt.Println(c.List())
 
 	fmt.Println(c.Get("ok"))
