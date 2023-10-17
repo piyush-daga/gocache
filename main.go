@@ -27,13 +27,15 @@ func main() {
 		}
 	}()
 
-	time.Sleep(5 * time.Second)
+	time.Sleep(2 * time.Second)
 	// As a test
 	c.Get("ok")
 
-	// fmt.Println(c.List())
+	// I mean technically this should never be able to proceed, as the above go routines,
+	// are most-definitely gonna starve the mutex
+	fmt.Println(c.List())
 
-	fmt.Println(c.Get("ok"))
-	fmt.Println(c.Get("ok1"))
-	fmt.Println(c.Get("ok2"))
+	// fmt.Println(c.Get("ok"))
+	// fmt.Println(c.Get("ok1"))
+	// fmt.Println(c.Get("ok2"))
 }
